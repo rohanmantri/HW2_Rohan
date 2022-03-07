@@ -42,7 +42,8 @@ ggplot(ave_boardings, aes(x = hour_of_day, y = avg_boarding, color = month)) + g
 
 ```
 
-### On weekdays, the average number of boardings is roughly the same, and on weekends, it drops as expected. On weekdays, the peak hour of boarding numbers remains consistent between 3 and 5 pm for all three months, owing to the fact that classes normally complete around that time. The average boardings on Mondays in September are lower due to Labor Day, which falls on the first Monday of the month, and those on Wednesdays, Thursdays, and Fridays in November due to the Thanksgiving holidays)
+### On weekdays, the average number of boardings is roughly the same, and on weekends, it drops as expected. On weekdays, the peak hour of boarding numbers remains consistent between 3 and 5 pm for all three months, owing to the fact that classes normally complete around that time. The average boardings on Mondays in September are lower due to Labor Day, which falls on the first Monday of the month, and those on Wednesdays, Thursdays, and Fridays in November due to the Thanksgiving holidays).
+
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 cap_2 = cap %>% 
@@ -55,14 +56,12 @@ ggplot(cap) +
   scale_colour_manual(name = 'Weekend', values = setNames(c('blue','red'), c(T, F))) +
   facet_wrap(~hour_of_day) +
       labs(x = 'Temperature in F', y = 'Boardings', color = 'Weekend',
-       title = 'Number of Boardings variation based on the Tempereature',
-       caption = '       The number of boardings is lower on weekends than on weekdays, as expected, throughout all temperature ranges 
-       and times of day, with the exception of 6 to 9 a.m. It`s most likely because lessons don`t start until 9 a.m. on weekdays,
-       and students don`t tend to get up early on weekdays or weekends. Temperature has no discernible effect on the 
-       number of UT students riding the bus when the hour of day and weekend status are kept constant. Over a wide range 
-       of temperatures, the dots are rather evenly dispersed.') +
+       title = 'Number of Boardings variation based on the Tempereature') +
   theme(plot.caption = element_text(hjust = 0))
 ```
+
+### The number of boardings is lower on weekends than on weekdays, as expected, throughout all temperature ranges and times of day, with the exception of 6 to 9 a.m. It's most likely because lessons don't start until 9 a.m. on weekdays, and students don't tend to get up early on weekdays or weekends. Temperature has no discernible effect on the number of UT students riding the bus when the hour of day and weekend status are kept constant. Over a wide range of temperatures, the dots are rather evenly dispersed.
+
 
 ## Question 2. Saratoga house prices
 
@@ -105,7 +104,7 @@ colnames(cv_saratoga_grid_final) = c("k", "rMSE")
 
 ```
 
-### The linear model seems better at achieving lower out-of sample mean-squared error. This model is particularly useful since it allows us to identify which variables have a substantial impact on property prices. House prices are influenced by factors such as lot size, land value, living area, waterfront, and central air conditioning. All of them have a positive relationship with home prices.
+### The linear model appears to have a better out-of-sample mean-squared error. This model is especially useful since it enables us to determine which variables have a significant impact on property values. Lot size, property value, living area, waterfront, and central air conditioning are all elements that influence house pricing. They all have a favorable correlation with housing prices.
 
 ### Output for linear regression model is as follows:
 

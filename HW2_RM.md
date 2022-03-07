@@ -2,13 +2,15 @@
 
 ![](HW2_RM_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
-### On weekdays, the average number of boardings is roughly the same, and on weekends, it drops as expected. On weekdays, the peak hour of boarding numbers remains consistent between 3 and 5 pm for all three months, owing to the fact that classes normally complete around that time. The average boardings on Mondays in September are lower due to Labor Day, which falls on the first Monday of the month, and those on Wednesdays, Thursdays, and Fridays in November due to the Thanksgiving holidays)
+### On weekdays, the average number of boardings is roughly the same, and on weekends, it drops as expected. On weekdays, the peak hour of boarding numbers remains consistent between 3 and 5 pm for all three months, owing to the fact that classes normally complete around that time. The average boardings on Mondays in September are lower due to Labor Day, which falls on the first Monday of the month, and those on Wednesdays, Thursdays, and Fridays in November due to the Thanksgiving holidays).
 
 ![](HW2_RM_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
+### The number of boardings is lower on weekends than on weekdays, as expected, throughout all temperature ranges and times of day, with the exception of 6 to 9 a.m. It’s most likely because lessons don’t start until 9 a.m. on weekdays, and students don’t tend to get up early on weekdays or weekends. Temperature has no discernible effect on the number of UT students riding the bus when the hour of day and weekend status are kept constant. Over a wide range of temperatures, the dots are rather evenly dispersed.
+
 ## Question 2. Saratoga house prices
 
-### The linear model seems better at achieving lower out-of sample mean-squared error. This model is particularly useful since it allows us to identify which variables have a substantial impact on property prices. House prices are influenced by factors such as lot size, land value, living area, waterfront, and central air conditioning. All of them have a positive relationship with home prices.
+### The linear model appears to have a better out-of-sample mean-squared error. This model is especially useful since it enables us to determine which variables have a significant impact on property values. Lot size, property value, living area, waterfront, and central air conditioning are all elements that influence house pricing. They all have a favorable correlation with housing prices.
 
 ### Output for linear regression model is as follows:
 
@@ -19,48 +21,48 @@
     ## 
     ## Residuals:
     ##     Min      1Q  Median      3Q     Max 
-    ## -220402  -34540   -5128   27705  461251 
+    ## -225936  -35206   -5168   28230  459848 
     ## 
     ## Coefficients:
     ##                          Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)             1.847e+05  2.306e+04   8.010 2.25e-15 ***
-    ## lotSize                 1.012e+04  2.368e+03   4.273 2.05e-05 ***
-    ## age                    -7.807e+01  5.974e+01  -1.307  0.19152    
-    ## landValue               8.539e-01  4.917e-02  17.367  < 2e-16 ***
-    ## livingArea              6.782e+01  4.896e+00  13.853  < 2e-16 ***
-    ## bedrooms               -8.189e+03  2.721e+03  -3.009  0.00266 ** 
-    ## fireplaces              2.347e+03  3.067e+03   0.765  0.44426    
-    ## bathrooms               3.299e+03  7.854e+03   0.420  0.67449    
-    ## rooms                  -1.592e+03  2.134e+03  -0.746  0.45567    
-    ## heatinghot water/steam -8.792e+03  4.350e+03  -2.021  0.04345 *  
-    ## heatingelectric        -1.445e+03  1.254e+04  -0.115  0.90825    
-    ## fuelelectric           -7.236e+03  1.232e+04  -0.587  0.55702    
-    ## fueloil                -3.536e+03  4.961e+03  -0.713  0.47612    
-    ## waterfrontNo           -1.204e+05  1.716e+04  -7.017 3.40e-12 ***
-    ## centralAirNo           -9.728e+03  3.588e+03  -2.711  0.00678 ** 
-    ## bathrooms:rooms         2.410e+03  9.851e+02   2.446  0.01455 *  
+    ## (Intercept)             1.935e+05  2.217e+04   8.726  < 2e-16 ***
+    ## lotSize                 1.011e+04  2.372e+03   4.263 2.14e-05 ***
+    ## age                    -6.664e+01  6.026e+01  -1.106 0.269004    
+    ## landValue               8.556e-01  4.813e-02  17.778  < 2e-16 ***
+    ## livingArea              6.477e+01  4.960e+00  13.059  < 2e-16 ***
+    ## bedrooms               -7.028e+03  2.701e+03  -2.602 0.009351 ** 
+    ## fireplaces              3.146e+03  3.123e+03   1.007 0.313913    
+    ## bathrooms               5.870e+03  7.864e+03   0.746 0.455520    
+    ## rooms                  -1.689e+03  2.145e+03  -0.787 0.431172    
+    ## heatinghot water/steam -7.486e+03  4.383e+03  -1.708 0.087866 .  
+    ## heatingelectric         2.880e+03  1.291e+04   0.223 0.823526    
+    ## fuelelectric           -1.401e+04  1.274e+04  -1.099 0.271801    
+    ## fueloil                -6.805e+03  5.035e+03  -1.352 0.176730    
+    ## waterfrontNo           -1.267e+05  1.552e+04  -8.162 6.79e-16 ***
+    ## centralAirNo           -1.300e+04  3.617e+03  -3.593 0.000337 ***
+    ## bathrooms:rooms         2.202e+03  9.800e+02   2.247 0.024786 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 57800 on 1539 degrees of freedom
-    ## Multiple R-squared:  0.6547, Adjusted R-squared:  0.6513 
-    ## F-statistic: 194.5 on 15 and 1539 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 58460 on 1539 degrees of freedom
+    ## Multiple R-squared:  0.6539, Adjusted R-squared:  0.6505 
+    ## F-statistic: 193.9 on 15 and 1539 DF,  p-value: < 2.2e-16
 
 ## Question 3. Classification and retrospective sampling
 
 ![](HW2_RM_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
     ##         (Intercept)            duration              amount         installment 
-    ##                0.44                1.03                1.00                1.29 
+    ##                0.41                1.03                1.00                1.33 
     ##                 age         historypoor     historyterrible          purposeedu 
-    ##                0.98                0.27                0.12                1.32 
+    ##                0.98                0.35                0.14                2.12 
     ## purposegoods/repair       purposenewcar      purposeusedcar       foreigngerman 
-    ##                1.16                2.44                0.58                0.37
+    ##                1.19                2.66                0.44                0.14
 
     ##    yhat
     ## y     0   1
-    ##   0 161  15
-    ##   1  60  14
+    ##   0 160  26
+    ##   1  45  19
 
 <table>
 <thead>
@@ -111,14 +113,14 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">baseline2</td>
-<td style="text-align: right;">0.0558459</td>
-<td style="text-align: right;">0.0016681</td>
+<td style="text-align: right;">0.0453920</td>
+<td style="text-align: right;">0.0014505</td>
 <td style="text-align: right;">0.7</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">LPM</td>
-<td style="text-align: right;">0.0283356</td>
-<td style="text-align: right;">0.0008945</td>
+<td style="text-align: right;">0.0277854</td>
+<td style="text-align: right;">0.0009912</td>
 <td style="text-align: right;">0.7</td>
 </tr>
 <tr class="even">
@@ -129,32 +131,32 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">baseline2</td>
-<td style="text-align: right;">0.0921596</td>
-<td style="text-align: right;">0.0029252</td>
+<td style="text-align: right;">0.0803301</td>
+<td style="text-align: right;">0.0032636</td>
 <td style="text-align: right;">0.5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">LPM</td>
-<td style="text-align: right;">0.0902338</td>
-<td style="text-align: right;">0.0034329</td>
+<td style="text-align: right;">0.0797799</td>
+<td style="text-align: right;">0.0036988</td>
 <td style="text-align: right;">0.5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">baseline1</td>
-<td style="text-align: right;">0.0002751</td>
+<td style="text-align: right;">0.0000000</td>
 <td style="text-align: right;">0.0000000</td>
 <td style="text-align: right;">0.2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">baseline2</td>
-<td style="text-align: right;">0.1389271</td>
-<td style="text-align: right;">0.0109755</td>
+<td style="text-align: right;">0.1224209</td>
+<td style="text-align: right;">0.0118699</td>
 <td style="text-align: right;">0.2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">LPM</td>
-<td style="text-align: right;">0.1345254</td>
-<td style="text-align: right;">0.0122567</td>
+<td style="text-align: right;">0.1185695</td>
+<td style="text-align: right;">0.0127886</td>
 <td style="text-align: right;">0.2</td>
 </tr>
 </tbody>
@@ -180,131 +182,131 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Fold01</td>
-<td style="text-align: left;">19</td>
-<td style="text-align: left;">19</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">20</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Fold02</td>
 <td style="text-align: left;">22</td>
-<td style="text-align: left;">21</td>
-<td style="text-align: left;">-1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fold03</td>
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">-2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fold04</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">24</td>
-<td style="text-align: left;">6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fold05</td>
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">-2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fold06</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">21</td>
+<td style="text-align: left;">25</td>
 <td style="text-align: left;">3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fold07</td>
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">21</td>
-<td style="text-align: left;">-1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fold08</td>
-<td style="text-align: left;">18</td>
+<td style="text-align: left;">Fold03</td>
 <td style="text-align: left;">19</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fold09</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">-2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fold10</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">19</td>
-<td style="text-align: left;">-1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fold11</td>
 <td style="text-align: left;">23</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">-3</td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Fold12</td>
+<td style="text-align: left;">Fold04</td>
 <td style="text-align: left;">23</td>
 <td style="text-align: left;">28</td>
 <td style="text-align: left;">5</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Fold13</td>
+<td style="text-align: left;">Fold05</td>
 <td style="text-align: left;">22</td>
-<td style="text-align: left;">20</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fold06</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fold07</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fold08</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">-4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fold09</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">21</td>
 <td style="text-align: left;">-2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fold10</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">-9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fold11</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">-6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fold12</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">-6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fold13</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">-1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Fold14</td>
 <td style="text-align: left;">22</td>
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">0</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Fold15</td>
+<td style="text-align: left;">22</td>
 <td style="text-align: left;">18</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">0</td>
+<td style="text-align: left;">-4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Fold16</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">11</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">16</td>
 <td style="text-align: left;">-7</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Fold17</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">-1</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Fold18</td>
-<td style="text-align: left;">19</td>
-<td style="text-align: left;">24</td>
-<td style="text-align: left;">5</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">-3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Fold19</td>
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">20</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">21</td>
 <td style="text-align: left;">-2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Fold20</td>
-<td style="text-align: left;">24</td>
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">-2</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Total</td>
-<td style="text-align: left;">408</td>
+<td style="text-align: left;">419</td>
 <td style="text-align: left;">402</td>
-<td style="text-align: left;">6</td>
+<td style="text-align: left;">17</td>
 </tr>
 </tbody>
 </table>
 
-### The model does the prediction pretty well. It only got 6 predictions wrong in total out of 4999 observations though if you look at each folds individually there is a difference as in sometimes we have negative and sometimes positive values, but in total it all averages out to 6.
+### The model does the prediction pretty well. It only got 17 predictions wrong in total out of 4999 observations though if you look at each folds individually there is a difference as in sometimes we have negative and sometimes positive values, but in total it all averages out to 17.
