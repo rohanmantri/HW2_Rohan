@@ -41,6 +41,7 @@ ave_boardings = capmetro_UT %>%
 ggplot(ave_boardings, aes(x = hour_of_day, y = avg_boarding, color = month)) + geom_line() + facet_wrap(vars(day_of_week)) + labs(x = '', y = '', color = 'Month', title = 'Average Boarding by Hour of Day Faceted by Day of Week')
 
 ```
+
 ### On weekdays, the average number of boardings is roughly the same, and on weekends, it drops as expected. On weekdays, the peak hour of boarding numbers remains consistent between 3 and 5 pm for all three months, owing to the fact that classes normally complete around that time. The average boardings on Mondays in September are lower due to Labor Day, which falls on the first Monday of the month, and those on Wednesdays, Thursdays, and Fridays in November due to the Thanksgiving holidays)
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -151,7 +152,7 @@ credit_german_test = testing(credit_german)
 	
 ```
 
-### The 'historypoor' variable multiplies odds of default by 0.39 in this logistic regression model, while the 'historyterrible' variable multiplies odds of default by 0.19. This means that having poor or terrible credit actually decreases the probability of default. This contradicts common sense; we believe the dataset is insufficient for developing a predictive model of defaults, particularly if the program's goal is to screen potential borrowers and identify them as having a "high" or "low" risk of default. It's due to the data sampling procedure. Instead of random sample, the bank chose defaulted loans and looked for similar loans during the data sampling procedure. This most certainly resulted in a significant bias in the data collection process: as previously stated, defaulted loans are likely to have low or horrible credit histories, and there would be insufficient datasets with good credit histories. In fact, just 89 observations out of 1000 had a decent credit history. Even though there would be a small number of defaulted loans, I would advise the bank to employ a random sample method. Increasing the size of the observations, if possible, will be really beneficial.
+#### The `historypoor` variable multiplies odds of default by 0.39 in this logistic regression model, while the `historyterrible` variable multiplies odds of default by 0.19. This means that having poor or terrible credit actually decreases the probability of default. This contradicts common sense; we believe the dataset is insufficient for developing a predictive model of defaults, particularly if the program's goal is to screen potential borrowers and identify them as having a "high" or "low" risk of default. It's due to the data sampling procedure. Instead of random sample, the bank chose defaulted loans and looked for similar loans during the data sampling procedure. This most certainly resulted in a significant bias in the data collection process: as previously stated, defaulted loans are likely to have low or horrible credit histories, and there would be insufficient datasets with good credit histories. In fact, just 89 observations out of 1000 had a decent credit history. Even though there would be a small number of defaulted loans, I would advise the bank to employ a random sample method. Increasing the size of the observations, if possible, will be really beneficial.
 
 ## Question 4. Children and hotel reservations
 
