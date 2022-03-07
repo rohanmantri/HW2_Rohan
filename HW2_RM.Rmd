@@ -41,8 +41,7 @@ ave_boardings = capmetro_UT %>%
 ggplot(ave_boardings, aes(x = hour_of_day, y = avg_boarding, color = month)) + geom_line() + facet_wrap(vars(day_of_week)) + labs(x = '', y = '', color = 'Month', title = 'Average Boarding by Hour of Day Faceted by Day of Week')
 
 ```
-
-# On weekdays, the average number of boardings is roughly the same, and on weekends, it drops as expected. On weekdays, the peak hour of boarding numbers remains consistent between 3 and 5 pm for all three months, owing to the fact that classes normally complete around that time. The average boardings on Mondays in September are lower due to Labor Day, which falls on the first Monday of the month, and those on Wednesdays, Thursdays, and Fridays in November due to the Thanksgiving holidays)
+### On weekdays, the average number of boardings is roughly the same, and on weekends, it drops as expected. On weekdays, the peak hour of boarding numbers remains consistent between 3 and 5 pm for all three months, owing to the fact that classes normally complete around that time. The average boardings on Mondays in September are lower due to Labor Day, which falls on the first Monday of the month, and those on Wednesdays, Thursdays, and Fridays in November due to the Thanksgiving holidays)
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 cap_2 = cap %>% 
@@ -105,9 +104,9 @@ colnames(cv_saratoga_grid_final) = c("k", "rMSE")
 
 ```
 
-# The linear model seems better at achieving lower out-of sample mean-squared error. This model is particularly useful since it allows us to identify which variables have a substantial impact on property prices. House prices are influenced by factors such as lot size, land value, living area, waterfront, and central air conditioning. All of them have a positive relationship with home prices.
+### The linear model seems better at achieving lower out-of sample mean-squared error. This model is particularly useful since it allows us to identify which variables have a substantial impact on property prices. House prices are influenced by factors such as lot size, land value, living area, waterfront, and central air conditioning. All of them have a positive relationship with home prices.
 
-# Output for linear regression model is as follows:
+### Output for linear regression model is as follows:
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 summary(saratoga_lm$`1`)
@@ -152,7 +151,7 @@ credit_german_test = testing(credit_german)
 	
 ```
 
-# The 'historypoor' variable multiplies odds of default by 0.39 in this logistic regression model, while the 'historyterrible' variable multiplies odds of default by 0.19. This means that having poor or terrible credit actually decreases the probability of default. This contradicts common sense; we believe the dataset is insufficient for developing a predictive model of defaults, particularly if the program's goal is to screen potential borrowers and identify them as having a "high" or "low" risk of default. It's due to the data sampling procedure. Instead of random sample, the bank chose defaulted loans and looked for similar loans during the data sampling procedure. This most certainly resulted in a significant bias in the data collection process: as previously stated, defaulted loans are likely to have low or horrible credit histories, and there would be insufficient datasets with good credit histories. In fact, just 89 observations out of 1000 had a decent credit history. Even though there would be a small number of defaulted loans, I would advise the bank to employ a random sample method. Increasing the size of the observations, if possible, will be really beneficial.
+### The 'historypoor' variable multiplies odds of default by 0.39 in this logistic regression model, while the 'historyterrible' variable multiplies odds of default by 0.19. This means that having poor or terrible credit actually decreases the probability of default. This contradicts common sense; we believe the dataset is insufficient for developing a predictive model of defaults, particularly if the program's goal is to screen potential borrowers and identify them as having a "high" or "low" risk of default. It's due to the data sampling procedure. Instead of random sample, the bank chose defaulted loans and looked for similar loans during the data sampling procedure. This most certainly resulted in a significant bias in the data collection process: as previously stated, defaulted loans are likely to have low or horrible credit histories, and there would be insufficient datasets with good credit histories. In fact, just 89 observations out of 1000 had a decent credit history. Even though there would be a small number of defaulted loans, I would advise the bank to employ a random sample method. Increasing the size of the observations, if possible, will be really beneficial.
 
 ## Question 4. Children and hotel reservations
 
@@ -233,9 +232,9 @@ roc_curve_hotels = foreach(thresh = grid_thresh, .combine='rbind') %do% {
 kable(roc_curve_hotels %>% filter(thresh == "0.5" | thresh == "0.2" | thresh == "0.7"))
 ```
 
-## This table has the TPR and FPR of the models when the threshold is set at 0.7, 0.5, and 0.2. Across various threshold values, baseline 1 displays low TPRs. We can see that the baseline 2 and LPM has higher TPRs. We choose baseline2 for further analysis.
+### This table has the TPR and FPR of the models when the threshold is set at 0.7, 0.5, and 0.2. Across various threshold values, baseline 1 displays low TPRs. We can see that the baseline 2 and LPM has higher TPRs. We choose baseline2 for further analysis.
 
-** Step 1 for Model validation
+### Step 1 for Model validation
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -267,7 +266,8 @@ ggplot(roc_curve_val) +
   geom_line(aes(x=FPR, y=TPR)) +
   labs(title="ROC curve of baseline2 using hotels_val data")
 ```
-** Step 2 for Model validation
+
+### Step 2 for Model validation
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 K_folds = 20
@@ -313,7 +313,7 @@ kable(hotels_final)
 
 ```
 
-# The model does the prediction pretty well. It only got `r abs(as.integer(hotels_final[21, 3]))` predictions wrong in total out of 4999 observations though if you look at each folds individually there is a difference as in sometimes we have negative and sometimes positive values, but in total it all averages out to `r abs(as.integer(hotels_final[21, 3]))`. 
+### The model does the prediction pretty well. It only got `r abs(as.integer(hotels_final[21, 3]))` predictions wrong in total out of 4999 observations though if you look at each folds individually there is a difference as in sometimes we have negative and sometimes positive values, but in total it all averages out to `r abs(as.integer(hotels_final[21, 3]))`. 
 
 
 
